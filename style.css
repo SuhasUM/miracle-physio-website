@@ -2063,3 +2063,78 @@ p { color: var(--neutral-700); }
     justify-content: center;
   }
 }
+
+/* ===== DESKTOP FIT FIX: keep full website visible at 100% zoom ===== */
+@media (min-width: 769px) {
+
+  /* Header */
+  .navbar .container {
+    max-width: 100%;
+    padding: 10px 24px;
+    gap: 20px;
+  }
+
+  .logo {
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  .logo--round {
+    width: 62px;
+    height: 62px;
+    flex: 0 0 62px;
+  }
+
+  .logo .logo-text strong {
+    font-size: .95rem;
+  }
+
+  .logo .logo-text span {
+    font-size: .82rem;
+  }
+
+  .nav-links {
+    flex: 1;
+    min-width: 0;
+    justify-content: flex-end;
+    gap: 1px;
+    margin-left: 12px;
+  }
+
+  .nav-links a {
+    padding: 8px 9px;
+    font-size: .80rem;
+    white-space: nowrap;
+  }
+
+  .nav-links .nav-cta {
+    margin-left: 4px;
+    padding: 10px 14px;
+    font-size: .82rem;
+    white-space: nowrap;
+  }
+
+  /* Hero */
+  .hero--enhanced {
+    min-height: 650px;
+  }
+
+  .hero-copy--enhanced {
+    width: min(46%, 540px);
+  }
+
+  .hero-copy--enhanced h1 {
+    font-size: clamp(2.55rem, 3.75vw, 3.5rem);
+    line-height: 1.1;
+  }
+
+  .hero-copy--enhanced .lead {
+    max-width: 520px;
+    font-size: .96rem;
+    line-height: 1.7;
+  }
+
+  .hero--enhanced .hero-slider {
+    inset: 9% max(20px, calc((100% - var(--maxw)) / 2)) 7% 52%;
+  }
+}
