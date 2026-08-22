@@ -2462,3 +2462,13 @@ p { color: var(--neutral-700); }
     padding: 14px;
   }
 }
+
+/* Mobile: space above and around hero photo */
+@media (max-width: 768px) {
+  .hero .hero-slider {
+    width: calc(100% - 28px);
+    height: 360px;
+    margin: 16px 14px 0;
+    border-radius: 22px;
+  }
+}
