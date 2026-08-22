@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book an Appointment | Miracle Advance Physiotherapy</title>
+  <meta name="description" content="Book a physiotherapy appointment with Miracle Advance Physiotherapy, Bengaluru.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="images/map-logo.png">
+<link rel="apple-touch-icon" href="images/map-logo.png">
+
+  <style>
+    .appointment-section { background:linear-gradient(180deg,#fff,var(--teal-50)); }
+    .appointment-intro { max-width:700px; margin:0 auto 30px; text-align:center; }
+    .appointment-intro h2 { margin:8px 0 12px; font-size:clamp(1.9rem,3vw,2.65rem); }
+    .appointment-intro p,.appointment-panel-text { color:var(--neutral-500); line-height:1.7; }
+    .appointment-steps { max-width:850px; margin:0 auto 38px; }
+    .appointment-layout { display:grid; grid-template-columns:minmax(0,1.2fr) minmax(290px,.8fr); gap:25px; align-items:start; }
+    .appointment-form-wrap { padding:clamp(24px,4vw,42px); border:1px solid var(--neutral-100); border-radius:22px; background:#fff; box-shadow:0 14px 34px rgba(3,43,84,.08); }
+    .appointment-form-wrap .booking-panel h3 { margin:7px 0 8px; font-size:1.5rem; }
+    .appointment-panel-label { color:var(--amber-600); font-size:.75rem; font-weight:700; letter-spacing:.9px; text-transform:uppercase; }
+    .appointment-date-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    .appointment-form-nav { display:flex; justify-content:space-between; gap:12px; margin-top:22px; }
+    .appointment-status { min-height:20px; margin-top:16px; color:var(--teal-700); font-weight:600; text-align:center; }
+    .appointment-status.error { color:#b42318; }
+    .appointment-support-card { padding:clamp(26px,4vw,38px); border-radius:22px; color:#fff; background:radial-gradient(circle at 95% 5%,rgba(241,182,46,.2),transparent 25%),linear-gradient(135deg,var(--teal-900),var(--teal-700)); box-shadow:0 14px 34px rgba(3,43,84,.15); }
+    .appointment-support-card h3 { margin:8px 0 21px; color:#fff; font-size:1.5rem; }
+    .appointment-support-card ul { display:grid; gap:18px; }
+    .appointment-support-card li { display:flex; align-items:flex-start; gap:12px; }
+    .appointment-support-card li>i { width:34px; height:34px; display:grid; flex:0 0 34px; place-items:center; border-radius:50%; color:var(--teal-900); background:var(--gold-400); }
+    .appointment-support-card li span { color:rgba(255,255,255,.82); font-size:.88rem; line-height:1.55; }
+    .appointment-support-card li strong { display:block; color:#fff; }
+    .appointment-support-actions { display:grid; gap:11px; margin-top:28px; }
+    .appointment-support-actions .btn { width:100%; text-align:center; }
+    .btn-whatsapp { background:#25d366; color:#fff; }
+    .btn-whatsapp:hover { background:#1da851; color:#fff; }
+    @media(max-width:850px){.appointment-layout{grid-template-columns:1fr;}}
+    @media(max-width:560px){.appointment-date-grid{grid-template-columns:1fr}.appointment-form-nav{flex-direction:column}.appointment-form-nav .btn{width:100%;text-align:center}}
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo" aria-label="Miracle Advance Physiotherapy home">
+        <span class="logo--round">
+          <img src="images/map-logo.png" alt="Miracle Advance Physiotherapy logo">
+        </span>
+        <span class="logo-text">
+          <strong>Miracle Advance Physiotherapy</strong>
+          <span>Dr B S Rajput, PT</span>
+        </span>
+      </a>
+
+      <button class="hamburger" aria-label="Menu">&#9776;</button>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="home-services.html">Home Services</a>
+        <a href="Advance Services.html">Advance Services</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+        <a href="appointment.html" class="btn btn-primary nav-cta">Book Appointment</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- BANNER -->
+  <section class="page-banner">
+    <div class="container">
+      <h1>Book Your Appointment</h1>
+      <p>Take the first step toward recovery. Booking is quick, easy, and flexible.</p>
+    </div>
+  </section>
+
+  <!-- APPOINTMENT BOOKING -->
+  <section class="section appointment-section">
+    <div class="container">
+
+      <div class="appointment-intro">
+        <span class="eyebrow">Simple &amp; Personalised Care</span>
+        <h2>Book Your Path to Better Movement</h2>
+        <p>Share your concern, select a convenient time, and our team will confirm your appointment shortly.</p>
+      </div>
+
+      <div class="steps appointment-steps">
+        <div class="step active" id="step1"><span class="n">1</span> Your Concern</div>
+        <div class="step" id="step2"><span class="n">2</span> Date &amp; Time</div>
+        <div class="step" id="step3"><span class="n">3</span> Your Details</div>
+      </div>
+
+      <div class="appointment-layout">
+
+        <div class="appointment-form-wrap">
+          <form action="https://api.web3forms.com/submit" method="POST" id="bookingForm">
+
+            <!-- Paste your real Web3Forms access key below -->
+            <input type="hidden" name="access_key" value="8bfdc67a-27cb-4a8e-8580-02c0d57a0ef8">
+            <input type="hidden" name="subject" value="New Appointment Request - Miracle Advance Physiotherapy">
+            <input type="hidden" name="from_name" value="Miracle Advance Physiotherapy Website">
+            <input type="hidden" name="form_type" value="Appointment Request">
+            <input type="checkbox" name="botcheck" style="display:none;">
+
+            <!-- STEP 1 -->
+            <div class="booking-panel">
+              <span class="appointment-panel-label">Step 1 of 3</span>
+              <h3>Tell Us About Your Concern</h3>
+              <p class="appointment-panel-text">This helps us understand how we can support your recovery.</p>
+
+              <div class="form-group">
+                <label for="concerns">What are your concerns? <span class="req">*</span></label>
+                <textarea id="concerns" name="concerns" rows="5" required placeholder="Briefly describe your pain, injury, or condition..."></textarea>
+                <div class="form-error"></div>
+              </div>
+
+              <button type="button" class="btn btn-teal" data-next="0">
+                Continue <i class="fas fa-arrow-right"></i>
+              </button>
+            </div>
+
+            <!-- STEP 2 -->
+            <div class="booking-panel" style="display:none;">
+              <span class="appointment-panel-label">Step 2 of 3</span>
+              <h3>Choose a Preferred Time</h3>
+              <p class="appointment-panel-text">We will confirm your selected slot by phone or WhatsApp.</p>
+
+              <div class="appointment-date-grid">
+                <div class="form-group">
+                  <label for="date">Preferred Date <span class="req">*</span></label>
+                  <input type="date" id="date" name="preferred_date" required>
+                  <div class="form-error"></div>
+                </div>
+
+                <div class="form-group">
+                  <label for="time">Preferred Time <span class="req">*</span></label>
+                  <select id="time" name="preferred_time" required>
+                    <option value="">Select a time...</option>
+                    <option>7:00 AM - 8:00 AM</option>
+                    <option>8:00 AM - 9:00 AM</option>
+                    <option>9:00 AM - 10:00 AM</option>
+                    <option>10:00 AM - 11:00 AM</option>
+                    <option>11:00 AM - 12:00 PM</option>
+                    <option>12:00 PM - 1:00 PM</option>
+                    <option>4:00 PM - 5:00 PM</option>
+                    <option>5:00 PM - 6:00 PM</option>
+                    <option>6:00 PM - 7:00 PM</option>
+                    <option>7:00 PM - 8:00 PM</option>
+                    <option>8:00 PM - 9:00 PM</option>
+                  </select>
+                  <div class="form-error"></div>
+                </div>
+              </div>
+
+              <div class="appointment-form-nav">
+                <button type="button" class="btn btn-light" data-prev="1">
+                  <i class="fas fa-arrow-left"></i> Back
+                </button>
+                <button type="button" class="btn btn-teal" data-next="1">
+                  Continue <i class="fas fa-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- STEP 3 -->
+            <div class="booking-panel" style="display:none;">
+              <span class="appointment-panel-label">Step 3 of 3</span>
+              <h3>Your Contact Details</h3>
+              <p class="appointment-panel-text">We will use these details only to confirm your appointment.</p>
+
+              <div class="form-group">
+                <label for="fname">Full Name <span class="req">*</span></label>
+                <input type="text" id="fname" name="name" required placeholder="Your full name">
+                <div class="form-error"></div>
+              </div>
+
+              <div class="appointment-date-grid">
+                <div class="form-group">
+                  <label for="fphone">Phone Number <span class="req">*</span></label>
+                  <input type="tel" id="fphone" name="phone" required placeholder="Your phone number">
+                  <div class="form-error"></div>
+                </div>
+
+                <div class="form-group">
+                  <label for="femail">Email Address <span class="req">*</span></label>
+                  <input type="email" id="femail" name="email" required placeholder="Your email address">
+                  <div class="form-error"></div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="notes">Additional Notes <small>(optional)</small></label>
+                <textarea id="notes" name="additional_notes" rows="3" placeholder="Anything else Dr Rajput should know?"></textarea>
+              </div>
+
+              <div class="appointment-form-nav">
+                <button type="button" class="btn btn-light" data-prev="2">
+                  <i class="fas fa-arrow-left"></i> Back
+                </button>
+
+                <button type="submit" class="btn btn-primary" id="appointmentSubmit">
+                  <i class="fas fa-calendar-check"></i> Confirm Appointment Request
+                </button>
+              </div>
+            </div>
+          </form>
+
+          <div class="success-msg" id="bookingSuccess">
+            <div class="big"><i class="fas fa-check-circle"></i></div>
+            <h3>Appointment Request Sent!</h3>
+            <p>Thank you. Dr B S Rajput's team will contact you shortly to confirm your appointment.</p>
+
+            <a href="https://wa.me/919886620534?text=Hello%20Miracle%20Advance%20Physiotherapy%2C%20I%20have%20submitted%20an%20appointment%20request."
+               target="_blank"
+               rel="noopener noreferrer"
+               class="btn btn-whatsapp">
+              <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+            </a>
+          </div>
+
+          <p class="appointment-status" id="appointmentStatus" aria-live="polite"></p>
+        </div>
+
+        <aside class="appointment-support-card">
+          <span class="appointment-panel-label">Your Care, Our Priority</span>
+          <h3>Why Book With Us?</h3>
+
+          <ul>
+            <li>
+              <i class="fas fa-user-doctor"></i>
+              <span><strong>16 Years of Experience</strong>Personalised physiotherapy led by Dr B S Rajput.</span>
+            </li>
+            <li>
+              <i class="fas fa-heart-pulse"></i>
+              <span><strong>Patient-Focused Treatment</strong>Care plans based on your condition and recovery goals.</span>
+            </li>
+            <li>
+              <i class="fas fa-house-chimney-medical"></i>
+              <span><strong>Clinic &amp; Home Visits</strong>Flexible care based on your comfort and needs.</span>
+            </li>
+            <li>
+              <i class="fas fa-clock"></i>
+              <span><strong>Flexible Hours</strong>Available Monday to Sunday, 7 AM to 10 PM.</span>
+            </li>
+          </ul>
+
+          <div class="appointment-support-actions">
+            <a href="tel:+919886620534" class="btn btn-light">
+              <i class="fas fa-phone-alt"></i> Call Us
+            </a>
+
+            <a href="https://wa.me/919886620534?text=Hello%20Miracle%20Advance%20Physiotherapy%2C%20I%20would%20like%20to%20book%20an%20appointment."
+               target="_blank"
+               rel="noopener noreferrer"
+               class="btn btn-whatsapp">
+              <i class="fab fa-whatsapp"></i> WhatsApp Us
+            </a>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div>
+          <a href="index.html" class="logo" aria-label="Miracle Advance Physiotherapy home">
+            <span class="logo--round">
+              <img src="images/map-logo.png" alt="Miracle Advance Physiotherapy logo">
+            </span>
+            <span class="logo-text">
+              <strong>Miracle Advance Physiotherapy</strong>
+              <span>Dr B S Rajput, PT</span>
+            </span>
+          </a>
+          <p>Healing Beyond Expectations. Expert, evidence-based physiotherapy and rehabilitation care in Bengaluru.</p>
+        </div>
+
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Our Services</a></li>
+            <li><a href="home-services.html">Home Services</a></li>
+            <li><a href="Advance Services.html">Advance Services</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Contact Us</h4>
+
+          <a class="contact-item"
+             href="https://maps.app.goo.gl/wxnJb56tzdFBGASf8?g_st=aw"
+             target="_blank"
+             rel="noopener noreferrer">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Banashankari 6th Stage, Bengaluru, Karnataka</span>
+          </a>
+
+          <a class="contact-item" href="tel:+919886620534">
+            <i class="fas fa-phone"></i>
+            <span>+91 98866 20534</span>
+          </a>
+
+          <a class="contact-item" href="tel:+919880592324">
+  <i class="fas fa-phone"></i>
+  <span>+91 98805 92324</span>
+</a>
+
+          <a class="contact-item"
+             href="https://wa.me/919886620534"
+             target="_blank"
+             rel="noopener noreferrer">
+            <i class="fab fa-whatsapp"></i>
+            <span>WhatsApp: +91 98866 20534</span>
+          </a>
+
+          <a class="contact-item" href="mailto:bhupen.limitless@gmail.com">
+            <i class="fas fa-envelope"></i>
+            <span>bhupen.limitless@gmail.com</span>
+          </a>
+        </div>
+
+        <div>
+          <h4>Connect With Us</h4>
+
+          <div class="socials">
+            <a href="https://www.instagram.com/map.physio?igsh=MW1ydm9ucXJyeXQ5Ng%3D%3D&utm_source=qr"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+
+            <a href="https://www.linkedin.com/in/bhupendra-singh-b6324a1b3?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+
+            <a href="https://maps.app.goo.gl/wxnJb56tzdFBGASf8?g_st=aw"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Google Maps">
+              <i class="fas fa-map-marker-alt"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; <span id="year"></span> Miracle Advance Physiotherapy. All rights reserved.</span>
+        <span>Healing Beyond Expectations</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING ACTIONS -->
+  <div class="floating-actions">
+    <a href="tel:+919886620534" class="floating-call" aria-label="Call Miracle Advance Physiotherapy">
+      <i class="fas fa-phone-alt"></i>
+      <span>Call</span>
+    </a>
+
+    <a href="appointment.html" class="floating-book" aria-label="Book an appointment">
+      <i class="fas fa-calendar-check"></i>
+      <span>Book</span>
+    </a>
+
+    <a href="https://wa.me/919886620534?text=Hello%20Miracle%20Advance%20Physiotherapy%2C%20I%20would%20like%20to%20book%20an%20appointment."
+       target="_blank"
+       rel="noopener noreferrer"
+       class="floating-whatsapp"
+       aria-label="Chat with us on WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+  </div>
+
+  <script src="script.js"></script>
+
+  <script>
+    (function () {
+      const form = document.getElementById("bookingForm");
+      const success = document.getElementById("bookingSuccess");
+      const status = document.getElementById("appointmentStatus");
+      const submitButton = document.getElementById("appointmentSubmit");
+
+      if (!form) return;
+
+      form.addEventListener("submit", async function (event) {
+        event.preventDefault();
+
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
+
+        submitButton.disabled = true;
+        submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        status.classList.remove("error");
+        status.textContent = "";
+
+        try {
+          const response = await fetch(form.action, {
+            method: "POST",
+            body: new FormData(form),
+            headers: { Accept: "application/json" }
+          });
+
+          const result = await response.json();
+
+          if (result.success) {
+            form.style.display = "none";
+            success.style.display = "block";
+          } else {
+            throw new Error(result.message || "Unable to send appointment request.");
+          }
+        } catch (error) {
+          status.classList.add("error");
+          status.textContent = "Sorry, the request could not be sent. Please call or WhatsApp us directly.";
+          submitButton.disabled = false;
+          submitButton.innerHTML = '<i class="fas fa-calendar-check"></i> Confirm Appointment Request';
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

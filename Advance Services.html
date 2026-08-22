@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Advanced Services | Miracle Advance Physiotherapy</title>
+  <meta name="description" content="Advanced physiotherapy services including laser therapy, dry needling, cupping, kinesio taping, sports injury management, rehabilitation, IASTM, and paediatric neuro therapy.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="icon" type="image/png" href="images/map-logo.png">
+  <link rel="apple-touch-icon" href="images/map-logo.png">
+
+  <style>
+    .advanced-services-section {
+      background: linear-gradient(180deg, #ffffff 0%, var(--teal-50) 100%);
+    }
+
+    .advanced-intro {
+      max-width: 760px;
+      margin: 0 auto 42px;
+      text-align: center;
+    }
+
+    .advanced-intro h2 {
+      margin: 8px 0 12px;
+      font-size: clamp(2rem, 3vw, 2.7rem);
+    }
+
+    .advanced-intro p {
+      color: var(--neutral-500);
+      line-height: 1.8;
+    }
+
+    .advanced-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+
+    .advanced-card {
+      overflow: hidden;
+      border: 1px solid var(--neutral-100);
+      border-radius: 18px;
+      background: #ffffff;
+      box-shadow: 0 9px 24px rgba(3, 43, 84, .08);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .advanced-card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 16px 34px rgba(3, 43, 84, .15);
+    }
+
+    .advanced-card-image {
+      position: relative;
+      height: 205px;
+      overflow: hidden;
+      background: var(--teal-900);
+    }
+
+    .advanced-card-image img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      transition: transform .45s ease;
+    }
+
+    .advanced-card:hover .advanced-card-image img {
+      transform: scale(1.07);
+    }
+
+    .advanced-icon {
+      position: absolute;
+      right: 16px;
+      bottom: -20px;
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border: 4px solid #ffffff;
+      border-radius: 50%;
+      background: var(--gold-400);
+      color: var(--teal-900);
+      font-size: 1.15rem;
+    }
+
+    .advanced-card-content {
+      padding: 30px 20px 22px;
+    }
+
+    .advanced-card-content h3 {
+      margin-bottom: 10px;
+      font-size: 1.12rem;
+    }
+
+    .advanced-card-content p {
+      color: var(--neutral-500);
+      font-size: .88rem;
+      line-height: 1.7;
+    }
+
+    .advanced-service-tag {
+      display: inline-block;
+      margin-bottom: 9px;
+      color: var(--amber-600);
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .8px;
+      text-transform: uppercase;
+    }
+
+    .advanced-bottom {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 26px;
+      align-items: center;
+      margin-top: 58px;
+      padding: clamp(26px, 4vw, 46px);
+      border-radius: 22px;
+      color: #ffffff;
+      background:
+        radial-gradient(circle at 90% 12%, rgba(241, 182, 46, .22), transparent 28%),
+        linear-gradient(135deg, var(--teal-900), var(--teal-700));
+    }
+
+    .advanced-bottom h2 {
+      margin: 8px 0 14px;
+      color: #ffffff;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+    }
+
+    .advanced-bottom p {
+      color: rgba(255, 255, 255, .82);
+      line-height: 1.8;
+    }
+
+    .advanced-bottom-label {
+      color: var(--gold-400);
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .advanced-bottom-actions {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .advanced-bottom-actions .btn {
+      min-width: 175px;
+      text-align: center;
+    }
+
+    .advanced-whatsapp {
+      background: #25d366;
+      color: #ffffff;
+    }
+
+    .advanced-whatsapp:hover {
+      background: #1da851;
+      color: #ffffff;
+    }
+
+    @media (max-width: 1100px) {
+      .advanced-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .advanced-grid,
+      .advanced-bottom {
+        grid-template-columns: 1fr;
+      }
+
+      .advanced-bottom-actions {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .advanced-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .advanced-bottom-actions .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo" aria-label="Miracle Advance Physiotherapy home">
+        <span class="logo--round">
+          <img src="images/map-logo.png" alt="Miracle Advance Physiotherapy logo">
+        </span>
+        <span class="logo-text">
+          <strong>Miracle Advance Physiotherapy</strong>
+          <span>Dr B S Rajput, PT</span>
+        </span>
+      </a>
+
+      <button class="hamburger" aria-label="Menu">&#9776;</button>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="home-services.html">Home Services</a>
+        <a href="Advance Services.html">Advance Services</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+        <a href="appointment.html" class="btn btn-primary nav-cta">Book Appointment</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- BANNER -->
+  <section class="page-banner">
+    <div class="container">
+      <h1>Advanced Physiotherapy Services</h1>
+      <p>Modern, targeted treatment approaches designed to support pain relief, mobility, performance, and recovery.</p>
+    </div>
+  </section>
+
+  <!-- ADVANCED SERVICES -->
+  <main>
+    <section class="section advanced-services-section">
+      <div class="container">
+
+        <div class="advanced-intro">
+          <span class="eyebrow">Specialised Care</span>
+          <h2>Advanced Treatment for Better Recovery</h2>
+          <p>
+            At Miracle Advance Physiotherapy, every treatment plan is selected according
+            to your condition, comfort, and recovery goals under the guidance of Dr B S Rajput.
+          </p>
+        </div>
+
+        <div class="advanced-grid">
+
+          <article class="advanced-card">
+            <div class="advanced-card-image">
+              <img src="https://physio360.co.nz/wp-content/uploads/2022/08/Physio-360-Laser-Therapy.jpg"
+                   alt="Laser therapy treatment"
+                   loading="lazy">
+              <div class="advanced-icon"><i class="fas fa-bolt"></i></div>
+            </div>
+            <div class="advanced-card-content">
+              <span class="advanced-service-tag">Pain Management</span>
+              <h3>Laser Therapy</h3>
+              <p>
+                A non-invasive treatment approach that may help support pain relief,
+                tissue healing, and recovery from musculoskeletal conditions.
+              </p>
+            </div>
+          </article>
+
+          <article class="advanced-card">
+            <div class="advanced-card-image">
+              <img src="/images/services/DryNeedling.jpg"
+                   alt="Dry needling therapy"
+                   loading="lazy">
+              <div class="advanced-icon"><i class="fas fa-thumbtack"></i></div>
+            </div>
+            <div class="advanced-card-content">
+              <span class="advanced-service-tag">Muscle Recovery</span>
+              <h3>Dry Needling Therapy</h3>
+              <p>
+                A targeted technique used to address tight muscle areas and trigger points,
+                helping improve movement and reduce muscle-related discomfort.
+              </p>
+            </div>
+          </article>
+
+          <article class="advanced-card">
+            <div class="advanced-card-image">
+              <img src="/images/cupping-therapy.jpg"
+                   alt="Cupping therapy treatment"
+                   loading="lazy">
+              <div class="advanced-icon"><i class="fas fa-circle"></i></div>
+            </div>
+            <div class="advanced-card-content">
+              <span class="advanced-service-tag">Soft Tissue Care</span>
+              <h3>Cupping Therapy</h3>
+              <p>
+                A supportive therapy technique that can help ease muscle tightness,
+                improve soft-tissue mobility, and complement rehabilitation plans.
+              </p>
+            </div>
+          </article>
+
+          <article class="advanced-card">
+            <div class="advanced-card-image">
+              <img src="https://healingstarpt.com/wp-content/uploads/2019/04/Kinesio-Taping.jpeg"
+                   alt="Kinesio taping on shoulder"
+                   loading="lazy">
+              <div class="advanced-icon"><i class="fas fa-bandage"></i></div>
+            </div>
+            <div class="advanced-card-content">
+              <span class="advanced-service-tag">Movement Support</span>
+              <h3>Kinesio Taping</h3>
+              <p>
+                Flexible therapeutic tape applied to support muscles and joints while
+                allowing natural movement during daily activities and rehabilitation.
+              </p>
+            </div>
+          </article>
+
+          <article class="advanced-card">
+            <div class="advanced-card-image">
+              <img src="/images/services/sportsInury.jpg"
+                   alt="Sports injury rehabilitation"
+                   loading="lazy">
+              <div class="advanced-icon"><i class="fas fa-person-running"></i></div>
+            </div>
+            <div class="advanced-card-content">
+              <span class="advanced-service-tag">Active Recovery</span>
+              <h3>Sports Injury Management</h3>
+              <p>
+                Assessment and rehabilitation for sports-related pain and injuries,
+                with a focus on restoring strength, mobility, and return to activity.
+              </p>
+            </div>
+          </article>
+
+          <article class="advanced-card">
+            <div class="advanced-card-image">
+              <img src="/images/services/orthoNeuro.jpg"
+                   alt="Orthopaedic rehabilitation treatment"
+                   loading="lazy">
+              <div class="advanced-icon"><i class="fas fa-person-walking"></i></div>
+            </div>
+            <div class="advanced-card-content">
+              <span class="advanced-service-tag">Rehabilitation</span>
+              <h3>Ortho &amp; Neuro Rehab</h3>
+              <p>
+                Personalised rehabilitation for orthopaedic and neurological conditions,
+                supporting functional movement, balance, strength, and independence.
+              </p>
+            </div>
+          </article>
+
+          <article class="advanced-card">
+            <div class="advanced-card-image">
+              <img src="/images/services/IASTM.jpg"
+                   alt="Instrument assisted soft tissue mobilization therapy"
+                   loading="lazy">
+              <div class="advanced-icon"><i class="fas fa-hand-holding-medical"></i></div>
+            </div>
+            <div class="advanced-card-content">
+              <span class="advanced-service-tag">Soft Tissue Mobilisation</span>
+              <h3>IASTM Therapy</h3>
+              <p>
+                Instrument-assisted soft tissue mobilisation is used to address restricted
+                soft tissues and support better mobility as part of a guided treatment plan.
+              </p>
+            </div>
+          </article>
+
+          <article class="advanced-card">
+            <div class="advanced-card-image">
+              <img src="/images/services/pediatricNeuro.jpg"
+                   alt="Paediatric physiotherapy session"
+                   loading="lazy">
+              <div class="advanced-icon"><i class="fas fa-child-reaching"></i></div>
+            </div>
+            <div class="advanced-card-content">
+              <span class="advanced-service-tag">Child Development</span>
+              <h3>Paediatric Neuro Therapy</h3>
+              <p>
+                Supportive physiotherapy for children with developmental and neurological
+                needs, focused on mobility, balance, coordination, and functional skills.
+              </p>
+            </div>
+          </article>
+
+
+          <!-- Speech Therapy -->
+<article class="advanced-card">
+  <div class="advanced-card-image">
+    <img src="/images/services/speechtherapy.jpg"
+         alt="Speech therapy session"
+         loading="lazy">
+    <div class="advanced-icon"><i class="fas fa-comments"></i></div>
+  </div>
+
+  <div class="advanced-card-content">
+    <span class="advanced-service-tag">Communication Support</span>
+    <h3>Speech Therapy</h3>
+    <p>
+      Personalised support to improve communication, speech clarity, language skills,
+      and confidence for children and adults with speech and language difficulties.
+    </p>
+  </div>
+</article>
+
+<!-- Occupational Therapy -->
+<article class="advanced-card">
+  <div class="advanced-card-image">
+    <img src="/images/services/occupationaltheraphy.jpg"
+         alt="Occupational therapy session"
+         loading="lazy">
+    <div class="advanced-icon"><i class="fas fa-hands-holding-child"></i></div>
+  </div>
+
+  <div class="advanced-card-content">
+    <span class="advanced-service-tag">Functional Independence</span>
+    <h3>Occupational Therapy</h3>
+    <p>
+      Goal-focused therapy that supports independence in daily activities, fine motor
+      skills, sensory needs, self-care, learning, and functional participation.
+    </p>
+  </div>
+</article>
+
+<!-- Women's Health Physiotherapy -->
+<article class="advanced-card">
+  <div class="advanced-card-image">
+    <img src="/images/services/womenHealth.jpg"
+         alt="Women's health physiotherapy session"
+         loading="lazy">
+    <div class="advanced-icon"><i class="fas fa-person-pregnant"></i></div>
+  </div>
+
+  <div class="advanced-card-content">
+    <span class="advanced-service-tag">Women's Wellness</span>
+    <h3>Women's Health Physiotherapy</h3>
+    <p>
+      Individualised care for pregnancy-related pain, antenatal exercise, postnatal
+      recovery, pelvic floor rehabilitation, core strengthening, and safe return to activity.
+    </p>
+  </div>
+</article>
+        </div>
+
+        <div class="advanced-bottom">
+          <div>
+            <span class="advanced-bottom-label">Personalised Treatment Matters</span>
+            <h2>Not Sure Which Therapy Is Right for You?</h2>
+            <p>
+              Speak with our team to discuss your symptoms and recovery goals.
+              We will guide you toward the most suitable physiotherapy approach.
+            </p>
+          </div>
+
+          <div class="advanced-bottom-actions">
+            <a href="tel:+919886620534" class="btn btn-light">
+              <i class="fas fa-phone-alt"></i> Call Us
+            </a>
+
+            <a href="https://wa.me/919886620534?text=Hello%20Miracle%20Advance%20Physiotherapy%2C%20I%20would%20like%20to%20know%20about%20your%20advanced%20services."
+               target="_blank"
+               rel="noopener noreferrer"
+               class="btn advanced-whatsapp">
+              <i class="fab fa-whatsapp"></i> WhatsApp Us
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div>
+          <a href="index.html" class="logo" aria-label="Miracle Advance Physiotherapy home">
+            <span class="logo--round">
+              <img src="images/map-logo.png" alt="Miracle Advance Physiotherapy logo">
+            </span>
+            <span class="logo-text">
+              <strong>Miracle Advance Physiotherapy</strong>
+              <span>Dr B S Rajput, PT</span>
+            </span>
+          </a>
+
+          <p>Healing Beyond Expectations. Expert, evidence-based physiotherapy and rehabilitation care in Bengaluru.</p>
+        </div>
+
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Our Services</a></li>
+            <li><a href="home-services.html">Home Services</a></li>
+            <li><a href="Advance Services.html">Advanced Services</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Contact Us</h4>
+
+          <a class="contact-item"
+             href="https://maps.app.goo.gl/wxnJb56tzdFBGASf8?g_st=aw"
+             target="_blank"
+             rel="noopener noreferrer">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Banashankari 6th Stage, Bengaluru, Karnataka</span>
+          </a>
+
+          <a class="contact-item" href="tel:+919886620534">
+            <i class="fas fa-phone"></i>
+            <span>+91 98866 20534</span>
+          </a>
+
+          <a class="contact-item" href="tel:+919880592324">
+  <i class="fas fa-phone"></i>
+  <span>+91 98805 92324</span>
+</a>
+
+          <a class="contact-item" href="mailto:bhupen.limitless@gmail.com">
+            <i class="fas fa-envelope"></i>
+            <span>bhupen.limitless@gmail.com</span>
+          </a>
+
+          <div class="contact-item">
+            <i class="fas fa-clock"></i>
+            <span>Mon&ndash;Sun: 7 AM &ndash; 10 PM</span>
+          </div>
+        </div>
+
+        <div>
+          <h4>Connect With Us</h4>
+
+          <div class="socials">
+            <a href="https://www.instagram.com/map.physio?igsh=MW1ydm9ucXJyeXQ5Ng%3D%3D&utm_source=qr"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+
+            <a href="https://www.linkedin.com/in/bhupendra-singh-b6324a1b3?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+
+            <a href="https://maps.app.goo.gl/wxnJb56tzdFBGASf8?g_st=aw"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Google Maps">
+              <i class="fas fa-map-marker-alt"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; <span id="year"></span> Miracle Advance Physiotherapy. All rights reserved.</span>
+        <span>Healing Beyond Expectations</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING ACTIONS -->
+  <div class="floating-actions">
+    <a href="tel:+919886620534" class="floating-call" aria-label="Call Miracle Advance Physiotherapy">
+      <i class="fas fa-phone-alt"></i>
+      <span>Call</span>
+    </a>
+
+    <a href="appointment.html" class="floating-book" aria-label="Book an appointment">
+      <i class="fas fa-calendar-check"></i>
+      <span>Book</span>
+    </a>
+
+    <a href="https://wa.me/919886620534?text=Hello%20Miracle%20Advance%20Physiotherapy%2C%20I%20would%20like%20to%20book%20an%20appointment."
+       target="_blank"
+       rel="noopener noreferrer"
+       class="floating-whatsapp"
+       aria-label="Chat with us on WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

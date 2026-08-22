@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | Miracle Advance Physiotherapy</title>
+  <meta name="description" content="Explore the clinic, rehabilitation equipment, and treatment spaces at Miracle Advance Physiotherapy.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="images/map-logo.png">
+<link rel="apple-touch-icon" href="images/map-logo.png">
+
+  <style>
+    .gallery-hero {
+      position: relative;
+      overflow: hidden;
+      padding: 88px 0 112px;
+      color: #ffffff;
+      text-align: center;
+      background:
+        linear-gradient(135deg, rgba(3, 43, 84, .94), rgba(7, 91, 114, .82)),
+        url("images/clinic-photos/clinic-entrance-signage.jpeg") center / cover;
+    }
+
+    .gallery-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 25%, rgba(241, 182, 46, .22), transparent 35%);
+      pointer-events: none;
+    }
+
+    .gallery-hero .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .gallery-hero .eyebrow {
+      display: inline-block;
+      padding: 7px 15px;
+      margin-bottom: 14px;
+      border: 1px solid rgba(255, 255, 255, .35);
+      border-radius: 999px;
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    .gallery-hero h1 {
+      margin-bottom: 14px;
+      color: #ffffff;
+      font-size: clamp(2.15rem, 4vw, 3.5rem);
+    }
+
+    .gallery-hero p {
+      max-width: 700px;
+      margin: 0 auto;
+      color: rgba(255, 255, 255, .88);
+      font-size: 1.04rem;
+      line-height: 1.8;
+    }
+
+    .gallery-intro-card {
+      max-width: 920px;
+      margin: -46px auto 0;
+      padding: 30px 36px;
+      border-radius: 18px;
+      background: #ffffff;
+      box-shadow: 0 18px 44px rgba(3, 43, 84, .14);
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .gallery-intro-card p {
+      margin: 0;
+      color: var(--neutral-500);
+      line-height: 1.8;
+    }
+
+    .gallery-intro-card i {
+      margin-right: 8px;
+      color: var(--amber-600);
+    }
+
+    .gallery-section {
+      padding-top: 58px;
+    }
+
+    .gallery-carousel {
+      margin-top: 28px;
+    }
+
+    .gallery-grid {
+      gap: 20px;
+      padding: 4px;
+    }
+
+    .gallery-showcase .gallery-item {
+      position: relative;
+      flex: 0 0 calc(33.333% - 14px);
+      height: 330px;
+      overflow: hidden;
+      border-radius: 18px;
+      background: var(--teal-900);
+      cursor: pointer;
+      box-shadow: 0 10px 26px rgba(3, 43, 84, .12);
+    }
+
+    .gallery-showcase .gallery-item img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      transition: transform .55s ease;
+    }
+
+    .gallery-showcase .gallery-item:hover img {
+      transform: scale(1.08);
+    }
+
+    .gallery-showcase .gallery-item .overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-end;
+      padding: 24px;
+      color: #ffffff;
+      opacity: 1;
+      background: linear-gradient(to top, rgba(3, 43, 84, .85), rgba(3, 43, 84, 0) 60%);
+    }
+
+    .gallery-showcase .overlay span {
+      margin-bottom: 5px;
+      color: #f5bb2b;
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .gallery-showcase .overlay h3 {
+      margin: 0;
+      color: #ffffff;
+      font-size: 1.12rem;
+    }
+
+    .gallery-showcase .overlay i {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .18);
+      backdrop-filter: blur(4px);
+    }
+
+    .gallery-story {
+      padding: 70px 0;
+      background: var(--teal-50);
+    }
+
+    .gallery-story-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .gallery-story-card {
+      padding: 28px 24px;
+      border: 1px solid rgba(3, 43, 84, .07);
+      border-radius: 16px;
+      background: #ffffff;
+      text-align: center;
+    }
+
+    .gallery-story-card i {
+      width: 54px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 16px;
+      border-radius: 50%;
+      color: var(--teal-700);
+      background: var(--teal-50);
+      font-size: 1.3rem;
+    }
+
+    .gallery-story-card h3 {
+      margin-bottom: 9px;
+    }
+
+    .gallery-story-card p {
+      color: var(--neutral-500);
+      font-size: .93rem;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .gallery-hero {
+        padding: 68px 0 90px;
+      }
+
+      .gallery-intro-card {
+        margin: -36px 20px 0;
+        padding: 25px 22px;
+      }
+
+      .gallery-showcase .gallery-item {
+        flex: 0 0 100%;
+        height: 310px;
+      }
+
+      .gallery-story-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container">
+           <a href="doctors.html" class="logo" aria-label="Miracle Advance Physiotherapy home">
+  <span class="logo--round">
+    <img src="images/map-logo.png" alt="Miracle Advance Physiotherapy logo">
+  </span>
+  <span class="logo-text">
+    <strong>Miracle Advance Physiotherapy</strong>
+    <span>Dr B S Rajput, PT</span>
+  </span>
+</a>
+      <button class="hamburger" aria-label="Menu">&#9776;</button>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="home-services.html">Home Services</a>
+        <a href="Advance Services.html">Advance Services</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+        <a href="appointment.html" class="btn btn-primary nav-cta">Book Appointment</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="gallery-hero">
+    <div class="container">
+      <span class="eyebrow">Our clinic in pictures</span>
+      <h1>A Space Designed for Your Recovery</h1>
+      <p>
+        Take a closer look at our welcoming clinic environment, modern rehabilitation
+        equipment, and thoughtfully designed treatment spaces.
+      </p>
+    </div>
+  </section>
+
+  <main>
+    <section class="section gallery-section">
+      <div class="container">
+        <div class="gallery-intro-card">
+          <p>
+            <i class="fas fa-camera"></i>
+            Every space is planned to help you feel comfortable, supported, and focused on recovery.
+            Select a category or click any image to view it closely.
+          </p>
+        </div>
+
+        <!-- FILTERS -->
+        <div class="tabs" style="margin-top:42px;">
+          <button class="tab-btn filter-btn active" data-filter="all">All Spaces</button>
+          <button class="tab-btn filter-btn" data-filter="clinic">Clinic</button>
+          <button class="tab-btn filter-btn" data-filter="rehab">Rehabilitation</button>
+          <button class="tab-btn filter-btn" data-filter="treatment">Treatment</button>
+        </div>
+
+        <!-- AUTO-SLIDING GALLERY -->
+        <div class="gallery-carousel gallery-showcase">
+          <button class="gallery-arrow gallery-prev" aria-label="Previous image">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+
+          <button class="gallery-arrow gallery-next" aria-label="Next image">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+
+          <div class="gallery-viewport">
+            <div class="gallery-grid" style="display:flex;">
+
+              <article class="gallery-item" data-cat="clinic">
+                <img src="images/clinic-photos/clinic-entrance-signage.jpeg"
+                     data-full="images/clinic-photos/clinic-entrance-signage.jpeg"
+                     alt="Miracle Advance Physiotherapy clinic entrance"
+                     loading="lazy">
+                <div class="overlay">
+                  <span>Clinic</span>
+                  <h3>Welcome to Our Clinic</h3>
+                  <i class="fas fa-expand"></i>
+                </div>
+              </article>
+
+              <article class="gallery-item" data-cat="clinic">
+                <img src="images/clinic-photos/clinic-corridor-reception.jpeg"
+                     data-full="images/clinic-photos/clinic-corridor-reception.jpeg"
+                     alt="Reception and clinic corridor"
+                     loading="lazy">
+                <div class="overlay">
+                  <span>Clinic</span>
+                  <h3>Comfortable Reception Area</h3>
+                  <i class="fas fa-expand"></i>
+                </div>
+              </article>
+
+              <article class="gallery-item" data-cat="clinic">
+                <img src="images/clinic-photos/clinic-corridor-bench.jpeg"
+                     data-full="images/clinic-photos/clinic-corridor-bench.jpeg"
+                     alt="Clinic waiting area"
+                     loading="lazy">
+                <div class="overlay">
+                  <span>Clinic</span>
+                  <h3>Calm Waiting Space</h3>
+                  <i class="fas fa-expand"></i>
+                </div>
+              </article>
+
+              <article class="gallery-item" data-cat="clinic">
+                <img src="images/clinic-photos/clinic-corridor-bench-alt.jpeg"
+                     data-full="images/clinic-photos/clinic-corridor-bench-alt.jpeg"
+                     alt="Clinic corridor"
+                     loading="lazy">
+                <div class="overlay">
+                  <span>Clinic</span>
+                  <h3>Clean, Accessible Interiors</h3>
+                  <i class="fas fa-expand"></i>
+                </div>
+              </article>
+
+              <article class="gallery-item" data-cat="rehab">
+                <img src="images/clinic-photos/rehab-gym-wide.jpeg"
+                     data-full="images/clinic-photos/rehab-gym-wide.jpeg"
+                     alt="Physiotherapy rehabilitation gym"
+                     loading="lazy">
+                <div class="overlay">
+                  <span>Rehabilitation</span>
+                  <h3>Movement & Recovery Zone</h3>
+                  <i class="fas fa-expand"></i>
+                </div>
+              </article>
+
+              <article class="gallery-item" data-cat="rehab">
+                <img src="images/clinic-photos/rehab-gym-stall-bars.jpeg"
+                     data-full="images/clinic-photos/rehab-gym-stall-bars.jpeg"
+                     alt="Rehabilitation equipment"
+                     loading="lazy">
+                <div class="overlay">
+                  <span>Rehabilitation</span>
+                  <h3>Functional Training Equipment</h3>
+                  <i class="fas fa-expand"></i>
+                </div>
+              </article>
+
+              <article class="gallery-item" data-cat="rehab">
+                <img src="images/clinic-photos/rehab-gym-chair.jpeg"
+                     data-full="images/clinic-photos/rehab-gym-chair.jpeg"
+                     alt="Rehabilitation exercise area"
+                     loading="lazy">
+                <div class="overlay">
+                  <span>Rehabilitation</span>
+                  <h3>Guided Exercise Support</h3>
+                  <i class="fas fa-expand"></i>
+                </div>
+              </article>
+
+              <article class="gallery-item" data-cat="treatment">
+                <img src="images/clinic-photos/treatment-room-tens.jpeg"
+                     data-full="images/clinic-photos/treatment-room-tens.jpeg"
+                     alt="Physiotherapy treatment room"
+                     loading="lazy">
+                <div class="overlay">
+                  <span>Treatment</span>
+                  <h3>Focused Therapy Sessions</h3>
+                  <i class="fas fa-expand"></i>
+                </div>
+              </article>
+
+              <article class="gallery-item" data-cat="treatment">
+                <img src="images/clinic-photos/treatment-room-wide.jpeg"
+                     data-full="images/clinic-photos/treatment-room-wide.jpeg"
+                     alt="Private physiotherapy treatment area"
+                     loading="lazy">
+                <div class="overlay">
+                  <span>Treatment</span>
+                  <h3>Professional Treatment Space</h3>
+                  <i class="fas fa-expand"></i>
+                </div>
+              </article>
+
+            </div>
+          </div>
+
+          <div class="gallery-dots"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INFORMATION SECTION -->
+    <section class="gallery-story">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">More than a clinic</span>
+          <h2>Built Around Better Recovery</h2>
+          <p>Our environment supports a positive, focused, and comfortable rehabilitation experience.</p>
+        </div>
+
+        <div class="gallery-story-grid">
+          <article class="gallery-story-card">
+            <i class="fas fa-heart-pulse"></i>
+            <h3>Patient-First Care</h3>
+            <p>A welcoming space where every patient receives attentive and personalised support.</p>
+          </article>
+
+          <article class="gallery-story-card">
+            <i class="fas fa-dumbbell"></i>
+            <h3>Purposeful Equipment</h3>
+            <p>Rehabilitation tools selected to support strength, mobility, balance, and confidence.</p>
+          </article>
+
+          <article class="gallery-story-card">
+            <i class="fas fa-shield-heart"></i>
+            <h3>Comfort & Confidence</h3>
+            <p>A clean, professional setting designed to make your treatment journey feel easier.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+ <!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+
+      <!-- Clinic -->
+      <div>
+        <a href="index.html" class="logo" aria-label="Miracle Advance Physiotherapy home">
+          <span class="logo--round">
+            <img src="images/map-logo.png" alt="Miracle Advance Physiotherapy logo">
+          </span>
+
+          <span class="logo-text">
+            <strong>Miracle Advance Physiotherapy</strong>
+            <span>Dr B S Rajput, PT</span>
+          </span>
+        </a>
+
+        <p>
+          Healing Beyond Expectations. Expert, evidence-based physiotherapy
+          and rehabilitation care in Bengaluru.
+        </p>
+      </div>
+
+      <!-- Quick links -->
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Our Services</a></li>
+          <li><a href="home-services.html">Home Services</a></li>
+          <li><a href="Advance Services.html">Advance Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h4>Contact Us</h4>
+
+        <a class="contact-item"
+           href="https://maps.app.goo.gl/wxnJb56tzdFBGASf8?g_st=aw"
+           target="_blank"
+           rel="noopener noreferrer">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Banashankari 6th Stage, Bengaluru, Karnataka</span>
+        </a>
+
+        <a class="contact-item" href="tel:+919886620534">
+          <i class="fas fa-phone"></i>
+          <span>+91 98866 20534</span>
+        </a>
+
+        <a class="contact-item" href="tel:+919880592324">
+  <i class="fas fa-phone"></i>
+  <span>+91 98805 92324</span>
+</a>
+
+        <a class="contact-item" href="mailto:bhupen.limitless@gmail.com">
+          <i class="fas fa-envelope"></i>
+          <span>bhupen.limitless@gmail.com</span>
+        </a>
+
+        <div class="contact-item">
+          <i class="fas fa-clock"></i>
+          <span>Mon–Sun: 7 AM – 10 PM</span>
+        </div>
+      </div>
+
+      <!-- Social links -->
+      <div>
+        <h4>Connect With Us</h4>
+
+        <div class="socials">
+          <a href="https://www.instagram.com/map.physio?igsh=MW1ydm9ucXJyeXQ5Ng%3D%3D&utm_source=qr"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="Follow us on Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+
+          <a href="https://www.linkedin.com/in/bhupendra-singh-b6324a1b3?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="Connect with us on LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+
+          <a href="https://maps.app.goo.gl/wxnJb56tzdFBGASf8?g_st=aw"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="Open clinic location in Google Maps">
+            <i class="fas fa-map-marker-alt"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> Miracle Advance Physiotherapy. All rights reserved.</span>
+      <span>Healing Beyond Expectations</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= FLOATING ACTIONS ================= -->
+<div class="floating-actions">
+
+  <!-- Direct phone call -->
+  <a href="tel:+919886620534"
+     class="floating-call"
+     aria-label="Call Miracle Advance Physiotherapy">
+    <i class="fas fa-phone-alt"></i>
+    <span>Call</span>
+  </a>
+
+  <!-- Appointment page -->
+  <a href="appointment.html"
+     class="floating-book"
+     aria-label="Book an appointment">
+    <i class="fas fa-calendar-check"></i>
+    <span>Book</span>
+  </a>
+
+  <!-- Direct WhatsApp chat -->
+  <a href="https://wa.me/919886620534?text=Hello%20Miracle%20Advance%20Physiotherapy%2C%20I%20would%20like%20to%20book%20an%20appointment."
+     target="_blank"
+     rel="noopener noreferrer"
+     class="floating-whatsapp"
+     aria-label="Chat with us on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+</div>
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <span class="close">&times;</span>
+    <img id="lightboxImg" src="" alt="Expanded gallery image">
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
