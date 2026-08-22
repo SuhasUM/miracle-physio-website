@@ -2312,3 +2312,71 @@ p { color: var(--neutral-700); }
     font-size: 1.4rem;
   }
 }
+
+/* ===== MOBILE: HERO PHOTO FIRST, TEXT BELOW ===== */
+@media (max-width: 768px) {
+
+  .hero--enhanced {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .hero--enhanced .hero-slider {
+    position: relative;
+    order: 1;
+    inset: auto;
+    width: 100%;
+    height: 390px;
+    margin: 0;
+    opacity: 1;
+    border-radius: 0 0 24px 24px;
+  }
+
+  .hero--enhanced .hero-slider::after {
+    background: linear-gradient(
+      180deg,
+      rgba(3, 43, 84, .02),
+      rgba(3, 43, 84, .18)
+    );
+  }
+
+  .hero--enhanced .hero-slide img {
+    object-position: center 16%;
+  }
+
+  .hero--enhanced .container {
+    order: 2;
+    width: 100%;
+    padding: 32px 22px 36px;
+    background: var(--navy-950);
+  }
+
+  .hero-copy--enhanced {
+    width: 100%;
+  }
+
+  .hero-copy--enhanced h1 {
+    font-size: clamp(2.2rem, 10vw, 3rem);
+    color: #ffffff;
+  }
+
+  .hero-copy--enhanced .lead {
+    color: rgba(255, 255, 255, .88);
+  }
+
+  .hero-eyebrow,
+  .hero-doctor-info {
+    display: none;
+  }
+
+  .hero-copy--enhanced .hero-cta {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .hero-copy--enhanced .hero-cta .btn {
+    width: 100%;
+  }
+}
