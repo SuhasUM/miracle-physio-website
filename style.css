@@ -2101,68 +2101,108 @@ p { color: var(--neutral-700); }
     margin-left: 12px;
   }
 
-   /* ===== MOBILE HEADER + HERO FIX ===== */
+ /* ===== CLEAN MOBILE WEBSITE LAYOUT ===== */
 @media (max-width: 768px) {
 
-  /* Header */
+  /* Normal compact mobile header */
   .navbar .container {
     position: relative;
-    min-height: 92px;
-    padding: 10px 66px 10px 14px;
+    min-height: 78px;
+    padding: 8px 14px;
+    display: flex;
     justify-content: flex-start;
+    gap: 10px;
+  }
+
+  /* Hamburger on LEFT */
+  .hamburger {
+    position: static;
+    order: -1;
+    flex: 0 0 40px;
+    width: 40px;
+    height: 40px;
+    display: flex !important;
+    transform: none;
   }
 
   .logo {
     min-width: 0;
-    width: 100%;
-    gap: 9px;
+    width: auto;
+    gap: 8px;
   }
 
   .logo--round {
-    width: 68px;
-    height: 68px;
-    flex: 0 0 68px;
+    width: 58px;
+    height: 58px;
+    flex: 0 0 58px;
   }
 
   .logo .logo-text {
     min-width: 0;
     overflow: hidden;
-    white-space: normal;
   }
 
   .logo .logo-text strong {
+    display: block;
+    max-width: 210px;
     overflow: hidden;
-    font-size: .92rem;
+    font-size: .82rem;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
 
   .logo .logo-text span {
-    margin-top: 2px;
-    font-size: .80rem;
+    font-size: .72rem;
     white-space: nowrap;
   }
 
-  .hamburger {
-    position: absolute;
-    top: 50%;
-    right: 14px;
-    left: auto;
-    display: flex !important;
-    width: 42px;
-    height: 42px;
-    transform: translateY(-50%);
+  /* Left-side mobile dropdown menu */
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: -290px;
+    right: auto;
+    width: 280px;
+    height: 100dvh;
+    padding: 88px 20px 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 5px;
+    background: #ffffff;
+    box-shadow: 12px 0 35px rgba(3, 43, 84, .20);
+    transition: left .3s ease;
+    z-index: 2000;
   }
 
-  /* Hero: text first, photo separately below */
+  .nav-links.open {
+    left: 0;
+    right: auto;
+  }
+
+  .nav-links a {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: .92rem;
+    text-align: left;
+  }
+
+  .nav-links .nav-cta {
+    width: 100%;
+    margin: 12px 0 0;
+    padding: 13px 14px;
+    text-align: center;
+  }
+
+  /* Hero: text and image stay separate */
   .hero--enhanced {
     display: block;
     min-height: auto;
-    padding: 38px 0 0;
+    padding: 34px 0 0;
   }
 
   .hero--enhanced .container {
-    padding: 0 24px;
+    padding: 0 22px;
   }
 
   .hero-copy--enhanced {
@@ -2170,95 +2210,40 @@ p { color: var(--neutral-700); }
   }
 
   .hero-copy--enhanced h1 {
-    font-size: clamp(2.4rem, 11vw, 3.25rem);
-    line-height: 1.08;
-    margin-bottom: 16px;
+    font-size: clamp(2.25rem, 10vw, 3rem);
+    line-height: 1.1;
   }
 
   .hero-copy--enhanced .lead {
-    font-size: 1rem;
+    font-size: .98rem;
     line-height: 1.7;
-    margin-bottom: 25px;
-  }
-
-  .hero-copy--enhanced .hero-cta {
-    gap: 13px;
   }
 
   .hero-copy--enhanced .hero-cta .btn {
     width: 100%;
-    padding: 14px 18px;
+    padding: 14px;
   }
 
+  /* Doctor photo goes BELOW content — not behind text */
   .hero--enhanced .hero-slider {
     position: relative;
     inset: auto;
     width: calc(100% - 32px);
-    height: 360px;
-    margin: 30px 16px 0;
+    height: 330px;
+    margin: 28px 16px 0;
     opacity: 1;
-    border-radius: 24px 24px 0 0;
+    border-radius: 22px;
   }
 
   .hero--enhanced .hero-slider::after {
     background: linear-gradient(
       180deg,
-      rgba(3, 43, 84, .08) 35%,
-      rgba(3, 43, 84, .35) 100%
+      rgba(3, 43, 84, .03),
+      rgba(3, 43, 84, .22)
     );
   }
 
   .hero--enhanced .hero-slide img {
     object-position: center 18%;
-  }
-
-  .hero-slider::before {
-    top: 14px;
-    left: 14px;
-    font-size: .58rem;
-    padding: 7px 10px;
-  }
-
-  .hero-dots {
-    right: 16px;
-    bottom: 16px;
-  }
-}
-
-  .nav-links a {
-    padding: 8px 9px;
-    font-size: .80rem;
-    white-space: nowrap;
-  }
-
-  .nav-links .nav-cta {
-    margin-left: 4px;
-    padding: 10px 14px;
-    font-size: .82rem;
-    white-space: nowrap;
-  }
-
-  /* Hero */
-  .hero--enhanced {
-    min-height: 650px;
-  }
-
-  .hero-copy--enhanced {
-    width: min(46%, 540px);
-  }
-
-  .hero-copy--enhanced h1 {
-    font-size: clamp(2.55rem, 3.75vw, 3.5rem);
-    line-height: 1.1;
-  }
-
-  .hero-copy--enhanced .lead {
-    max-width: 520px;
-    font-size: .96rem;
-    line-height: 1.7;
-  }
-
-  .hero--enhanced .hero-slider {
-    inset: 9% max(20px, calc((100% - var(--maxw)) / 2)) 7% 52%;
   }
 }
