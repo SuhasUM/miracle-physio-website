@@ -2101,6 +2101,130 @@ p { color: var(--neutral-700); }
     margin-left: 12px;
   }
 
+   /* ===== MOBILE HEADER + HERO FIX ===== */
+@media (max-width: 768px) {
+
+  /* Header */
+  .navbar .container {
+    position: relative;
+    min-height: 92px;
+    padding: 10px 66px 10px 14px;
+    justify-content: flex-start;
+  }
+
+  .logo {
+    min-width: 0;
+    width: 100%;
+    gap: 9px;
+  }
+
+  .logo--round {
+    width: 68px;
+    height: 68px;
+    flex: 0 0 68px;
+  }
+
+  .logo .logo-text {
+    min-width: 0;
+    overflow: hidden;
+    white-space: normal;
+  }
+
+  .logo .logo-text strong {
+    overflow: hidden;
+    font-size: .92rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .logo .logo-text span {
+    margin-top: 2px;
+    font-size: .80rem;
+    white-space: nowrap;
+  }
+
+  .hamburger {
+    position: absolute;
+    top: 50%;
+    right: 14px;
+    left: auto;
+    display: flex !important;
+    width: 42px;
+    height: 42px;
+    transform: translateY(-50%);
+  }
+
+  /* Hero: text first, photo separately below */
+  .hero--enhanced {
+    display: block;
+    min-height: auto;
+    padding: 38px 0 0;
+  }
+
+  .hero--enhanced .container {
+    padding: 0 24px;
+  }
+
+  .hero-copy--enhanced {
+    width: 100%;
+  }
+
+  .hero-copy--enhanced h1 {
+    font-size: clamp(2.4rem, 11vw, 3.25rem);
+    line-height: 1.08;
+    margin-bottom: 16px;
+  }
+
+  .hero-copy--enhanced .lead {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 25px;
+  }
+
+  .hero-copy--enhanced .hero-cta {
+    gap: 13px;
+  }
+
+  .hero-copy--enhanced .hero-cta .btn {
+    width: 100%;
+    padding: 14px 18px;
+  }
+
+  .hero--enhanced .hero-slider {
+    position: relative;
+    inset: auto;
+    width: calc(100% - 32px);
+    height: 360px;
+    margin: 30px 16px 0;
+    opacity: 1;
+    border-radius: 24px 24px 0 0;
+  }
+
+  .hero--enhanced .hero-slider::after {
+    background: linear-gradient(
+      180deg,
+      rgba(3, 43, 84, .08) 35%,
+      rgba(3, 43, 84, .35) 100%
+    );
+  }
+
+  .hero--enhanced .hero-slide img {
+    object-position: center 18%;
+  }
+
+  .hero-slider::before {
+    top: 14px;
+    left: 14px;
+    font-size: .58rem;
+    padding: 7px 10px;
+  }
+
+  .hero-dots {
+    right: 16px;
+    bottom: 16px;
+  }
+}
+
   .nav-links a {
     padding: 8px 9px;
     font-size: .80rem;
