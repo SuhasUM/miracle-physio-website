@@ -2064,10 +2064,8 @@ p { color: var(--neutral-700); }
   }
 }
 
-/* ===== DESKTOP FIT FIX: keep full website visible at 100% zoom ===== */
+/* ===== DESKTOP FIT FIX ===== */
 @media (min-width: 769px) {
-
-  /* Header */
   .navbar .container {
     max-width: 100%;
     padding: 10px 24px;
@@ -2101,78 +2099,99 @@ p { color: var(--neutral-700); }
     margin-left: 12px;
   }
 
- /* ===== CLEAN MOBILE WEBSITE LAYOUT ===== */
+  .nav-links a {
+    padding: 8px 9px;
+    font-size: .80rem;
+  }
+
+  .nav-links .nav-cta {
+    margin-left: 4px;
+    padding: 10px 14px;
+    font-size: .82rem;
+  }
+
+  .hero--enhanced {
+    min-height: 650px;
+  }
+
+  .hero-copy--enhanced h1 {
+    font-size: clamp(2.55rem, 3.75vw, 3.5rem);
+  }
+}
+
+
+/* ===== PROFESSIONAL MOBILE LAYOUT ===== */
 @media (max-width: 768px) {
 
-  /* Normal compact mobile header */
+  /* Compact header */
   .navbar .container {
-    position: relative;
-    min-height: 78px;
-    padding: 8px 14px;
+    min-height: 76px;
+    padding: 9px 14px;
     display: flex;
+    align-items: center;
     justify-content: flex-start;
     gap: 10px;
   }
 
-  /* Hamburger on LEFT */
+  /* Hamburger menu on left */
   .hamburger {
-    position: static;
+    display: flex;
     order: -1;
-    flex: 0 0 40px;
-    width: 40px;
-    height: 40px;
-    display: flex !important;
-    transform: none;
+    flex: 0 0 38px;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    font-size: 1.45rem;
   }
 
   .logo {
     min-width: 0;
-    width: auto;
     gap: 8px;
   }
 
   .logo--round {
-    width: 58px;
-    height: 58px;
-    flex: 0 0 58px;
+    width: 55px;
+    height: 55px;
+    flex: 0 0 55px;
   }
 
   .logo .logo-text {
     min-width: 0;
     overflow: hidden;
+    white-space: nowrap;
   }
 
   .logo .logo-text strong {
-    display: block;
-    max-width: 210px;
     overflow: hidden;
-    font-size: .82rem;
+    max-width: 220px;
+    font-size: .84rem;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
 
   .logo .logo-text span {
     font-size: .72rem;
-    white-space: nowrap;
   }
 
-  /* Left-side mobile dropdown menu */
+  /* Professional left drawer */
   .nav-links {
     position: fixed;
     top: 0;
-    left: -290px;
+    left: -285px;
     right: auto;
-    width: 280px;
+    width: 275px;
     height: 100dvh;
-    padding: 88px 20px 28px;
+    padding: 85px 18px 26px;
     display: flex;
     flex-direction: column;
     align-items: stretch;
     gap: 5px;
+    overflow-y: auto;
     background: #ffffff;
     box-shadow: 12px 0 35px rgba(3, 43, 84, .20);
-    transition: left .3s ease;
-    z-index: 2000;
+    transition: left .28s ease;
+    z-index: 3000;
   }
 
   .nav-links.open {
@@ -2183,22 +2202,23 @@ p { color: var(--neutral-700); }
   .nav-links a {
     width: 100%;
     padding: 12px 14px;
-    font-size: .92rem;
+    font-size: .91rem;
     text-align: left;
+    white-space: normal;
   }
 
   .nav-links .nav-cta {
     width: 100%;
-    margin: 12px 0 0;
+    margin: 10px 0 0;
     padding: 13px 14px;
     text-align: center;
   }
 
-  /* Hero: text and image stay separate */
+  /* Clean hero text section */
   .hero--enhanced {
     display: block;
     min-height: auto;
-    padding: 34px 0 0;
+    padding: 36px 0 0;
   }
 
   .hero--enhanced .container {
@@ -2210,13 +2230,21 @@ p { color: var(--neutral-700); }
   }
 
   .hero-copy--enhanced h1 {
-    font-size: clamp(2.25rem, 10vw, 3rem);
+    font-size: clamp(2.2rem, 10vw, 3rem);
     line-height: 1.1;
+    margin-bottom: 15px;
   }
 
   .hero-copy--enhanced .lead {
-    font-size: .98rem;
+    font-size: .96rem;
     line-height: 1.7;
+    margin-bottom: 24px;
+  }
+
+  .hero-copy--enhanced .hero-cta {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
 
   .hero-copy--enhanced .hero-cta .btn {
@@ -2224,7 +2252,7 @@ p { color: var(--neutral-700); }
     padding: 14px;
   }
 
-  /* Doctor photo goes BELOW content — not behind text */
+  /* Photo below text: no overlap */
   .hero--enhanced .hero-slider {
     position: relative;
     inset: auto;
@@ -2245,5 +2273,42 @@ p { color: var(--neutral-700); }
 
   .hero--enhanced .hero-slide img {
     object-position: center 18%;
+  }
+
+  /* Mobile statistics */
+  .stats-strip {
+    padding: 28px 0;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px 12px;
+  }
+
+  .stat .num {
+    font-size: 1.7rem;
+  }
+
+  .stat .label {
+    font-size: .75rem;
+  }
+
+  /* Floating buttons */
+  .floating-actions {
+    right: 12px;
+    bottom: 14px;
+    gap: 7px;
+  }
+
+  .floating-call,
+  .floating-book {
+    padding: 11px 13px;
+    font-size: .78rem;
+  }
+
+  .floating-whatsapp {
+    width: 48px;
+    height: 48px;
+    font-size: 1.4rem;
   }
 }
